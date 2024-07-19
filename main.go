@@ -107,7 +107,7 @@ func colorToMono(color color.Color) bool {
 	// if (R != 65535 || G != 65535 || B != 65535) {
 	// 	fmt.Println(R,G,B)
 	// }
-	luminance := (0.2126*float64(R)/float64(A) + 0.7152*float64(G)/float64(A) + 0.0722*float64(B)/float64(A))
+	luminance := (0.2126*float64(R) + 0.7152*float64(G) + 0.0722*float64(B))/float64(A)
 	if *inverted {
 		return luminance >= threshold
 	} else {
